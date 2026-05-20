@@ -1,0 +1,33 @@
+{
+  "skill_name": "scmp-daily-digest",
+  "assertions": [
+    "Output saved as a markdown file named exactly with today's date (2026-05-20.md)",
+    "Includes a Top Stories section",
+    "Includes section briefs for all 8 sections: China, Economy, Hong Kong, Asia, Business, Tech, World, Opinion",
+    "Includes a 'China Moves India Hasn't Matched Yet' analysis section",
+    "Includes an 'AI Monetization Opportunities for India' analysis section",
+    "Section brief bullets link to scmp.com article URLs",
+    "China-gap items state India's current status, not only what China did",
+    "AI opportunities each name a target Indian market segment and a monetization model"
+  ],
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Give me today's SCMP digest.",
+      "expected_output": "A dated markdown file saved to scmp-digest/<date>.md containing Top Stories, section briefs for China, Economy, Hong Kong, Asia, Business, Tech, World and Opinion, plus the 'China Moves India Hasn't Matched Yet' and 'AI Monetization Opportunities for India' analysis sections. A short spoken summary of highlights in the reply.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "what's the morning china post saying today? i want the daily summary and especially anything china is doing that we just don't have here in india yet",
+      "expected_output": "Full digest saved as a dated markdown file, with the 'China Moves India Hasn't Matched Yet' section developed in real depth — concrete China developments, India's current state for each (verified where uncertain), and why each gap matters.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "run my scmp roundup for me - and pull out any AI or tech stuff in there i could actually build and sell into the indian market",
+      "expected_output": "Full digest saved as a dated markdown file, with the 'AI Monetization Opportunities for India' section giving concrete, buildable AI product ideas tied to today's stories, each with a target Indian market segment, a monetization model, and a feasibility note.",
+      "files": []
+    }
+  ]
+}
