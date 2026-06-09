@@ -1,0 +1,405 @@
+{
+  "metadata": {
+    "skill_name": "swing-trade-screener",
+    "skill_path": "/Users/in22911941/system/ai-skills/swing-trade-screener",
+    "timestamp": "2026-06-09T00:00:00Z",
+    "evals_run": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "headline-screen",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 221.5,
+        "tokens": 49971,
+        "tool_calls": 21,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Performs a market-regime check on the Nifty index before screening (mentions Nifty trend vs moving averages, or India VIX).",
+          "passed": true,
+          "evidence": "Opens with explicit regime line: Nifty 23,123 below 50-DMA and falling, 'Strong Sell' on MAs, VIX +8.2% to 17.09, FII selling \u2014 declared UNFAVORABLE."
+        },
+        {
+          "text": "Applies all four gates: price momentum, rising volume, positive sentiment, and trade-viability/risk-reward.",
+          "passed": true,
+          "evidence": "Each of 4 candidates rejected with the named failing gate (SOLARINDS Gate 4, INOX Gate 4, CCL Gate 4, BEL Gate 1); R:R and 52w-high room explicitly evaluated."
+        },
+        {
+          "text": "For any named stock, provides a full trade plan: entry zone, stop-loss, ~5% target, and risk:reward.",
+          "passed": true,
+          "evidence": "No stock qualified, so no plan was due; still supplied the position-sizing formula for when a setup appears. No violation."
+        },
+        {
+          "text": "If no stock qualifies, returns NO stock names and explains why \u2014 does not force a pick.",
+          "passed": true,
+          "evidence": "Qualified: 0. Names only appear as rejected 'closest misses' with gate-by-gate reasoning and a 'wait' recommendation."
+        },
+        {
+          "text": "Includes a not-financial-advice and/or data-freshness caveat.",
+          "passed": true,
+          "evidence": "'Data as-of EOD Jun 8 ... confirm live prices ... educational screening, not SEBI-registered investment advice.'"
+        },
+        {
+          "text": "Does not present fabricated exact indicator values as fact; sources from web or marks unavailable.",
+          "passed": true,
+          "evidence": "Indicator values tied to web data with an as-of note; no invented precision claimed as live."
+        }
+      ]
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "headline-screen",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 163.6,
+        "tokens": 31341,
+        "tool_calls": 15,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Performs a market-regime check on the Nifty index before screening (mentions Nifty trend vs moving averages, or India VIX).",
+          "passed": true,
+          "evidence": "'Why I'm cautious' section: Nifty 23,123 (-1.04%), bearish-to-sideways, support 23,000, macro overhangs. Regime considered, though not framed against 20/50-DMA explicitly."
+        },
+        {
+          "text": "Applies all four gates: price momentum, rising volume, positive sentiment, and trade-viability/risk-reward.",
+          "passed": false,
+          "evidence": "Covers sentiment, momentum, volume and rejects names on over-extension, but no systematic gate framework; trade-viability/R:R applied loosely and not to every candidate."
+        },
+        {
+          "text": "For any named stock, provides a full trade plan: entry zone, stop-loss, ~5% target, and risk:reward.",
+          "passed": true,
+          "evidence": "Paras Defence: entry \u20b9940-950, target \u20b9990-1000 (~+5%), stop \u20b9915. Entry/stop/target present; explicit R:R not stated."
+        },
+        {
+          "text": "If no stock qualifies, returns NO stock names and explains why \u2014 does not force a pick.",
+          "passed": true,
+          "evidence": "Rejected HFCL/Lumax/Muthoot/52w-high spikers; surfaced only one conditional name on a pullback \u2014 restraint shown, not a forced basket."
+        },
+        {
+          "text": "Includes a not-financial-advice and/or data-freshness caveat.",
+          "passed": true,
+          "evidence": "'Research/analysis, not investment advice. Prices as of 8 June 2026 ... re-verify live levels.'"
+        },
+        {
+          "text": "Does not present fabricated exact indicator values as fact; sources from web or marks unavailable.",
+          "passed": true,
+          "evidence": "Prices/levels attributed to public sources with as-of date; no fabricated live indicators."
+        }
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "nifty50-breakout",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 242.5,
+        "tokens": 50085,
+        "tool_calls": 25,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Restricts the screen to the Nifty 50 universe as requested (not Nifty 500 or arbitrary stocks).",
+          "passed": true,
+          "evidence": "'Universe scanned: Nifty 50'; candidates all Nifty 50 (Apollo, Adani Ports, Adani Ent, Airtel, BEL, Max Health)."
+        },
+        {
+          "text": "Screens specifically for breakout AND above-average volume.",
+          "passed": true,
+          "evidence": "Core ask centered: rejects Apollo because the 52w-high breakout was on ~1.2x volume / distribution, not a 1.5x+ surge \u2014 volume confirmation is the explicit pivot."
+        },
+        {
+          "text": "Provides a full trade plan with stop-loss and ~5% target for any qualifying stock.",
+          "passed": true,
+          "evidence": "Qualified: 0, so no plan due; position-sizing reminder included. No violation."
+        },
+        {
+          "text": "Includes market-regime context and a position-sizing reminder.",
+          "passed": true,
+          "evidence": "Regime line (Nifty below 20/50-DMA, breadth 1:3, VIX +8.2%) plus explicit position-sizing formula."
+        },
+        {
+          "text": "Returns no names if none qualify rather than forcing breakouts.",
+          "passed": true,
+          "evidence": "Returned zero; named Apollo only as a rejected near-miss with a future trigger."
+        }
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "nifty50-breakout",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 285.1,
+        "tokens": 36759,
+        "tool_calls": 19,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Restricts the screen to the Nifty 50 universe as requested (not Nifty 500 or arbitrary stocks).",
+          "passed": true,
+          "evidence": "Explicitly Nifty 50; notes few large-cap breakouts and excludes out-of-index names (ITDC, Adani Green, Paras)."
+        },
+        {
+          "text": "Screens specifically for breakout AND above-average volume.",
+          "passed": true,
+          "evidence": "'breakout without above-average volume ... guilty until proven innocent'; demands confirming volume on triggers."
+        },
+        {
+          "text": "Provides a full trade plan with stop-loss and ~5% target for any qualifying stock.",
+          "passed": true,
+          "evidence": "Sun Pharma (entry >\u20b91,815, stop \u20b91,748, T1 \u20b91,916) and Max Healthcare (entry \u20b9985-1,012, stop \u20b9958, T1 \u20b91,055 ~+5%) with R:R."
+        },
+        {
+          "text": "Includes market-regime context and a position-sizing reminder.",
+          "passed": true,
+          "evidence": "Detailed regime table; 'size so a full stop-out costs ~1% of capital'."
+        },
+        {
+          "text": "Returns no names if none qualify rather than forcing breakouts.",
+          "passed": true,
+          "evidence": "Conditional trigger-based plans, not blind buys; explicitly pivoted away from chasing fresh-high breakouts. Discipline held."
+        }
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "watchlist-discipline",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 144.0,
+        "tokens": 36648,
+        "tool_calls": 16,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Evaluates only the five watchlist tickers as the universe; does not pull in other stocks.",
+          "passed": true,
+          "evidence": "Universe = the 5 names; scorecard covers exactly RELIANCE, TCS, HDFCBANK, ITC, TATAMOTORS."
+        },
+        {
+          "text": "Runs each ticker through the four gates (momentum, volume, sentiment, trade-viability).",
+          "passed": true,
+          "evidence": "All five judged against the gates; each fails Gate 1 (below 50/200-DMA, downtrend), with sentiment/volume notes per name."
+        },
+        {
+          "text": "Does NOT force-pick the 'least bad' of the five \u2014 if none clear the gates, says none qualify.",
+          "passed": true,
+          "evidence": "Qualified: 0; explicitly refuses to name TataMotors and recommends widening the net instead."
+        },
+        {
+          "text": "Any named pick includes a full trade plan (entry, stop-loss, ~5% target, risk:reward).",
+          "passed": true,
+          "evidence": "No pick made, so none due. Also caught a STALE source (Investing.com 'TCS Strong Buy') and corrected it."
+        }
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "watchlist-discipline",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 130.9,
+        "tokens": 26317,
+        "tool_calls": 12,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Evaluates only the five watchlist tickers as the universe; does not pull in other stocks.",
+          "passed": true,
+          "evidence": "Scorecard limited to the five names."
+        },
+        {
+          "text": "Runs each ticker through the four gates (momentum, volume, sentiment, trade-viability).",
+          "passed": false,
+          "evidence": "Strong on trend/RSI/MA/200-DMA and R:R, but volume and per-name sentiment gates are largely absent \u2014 not a full four-gate pass."
+        },
+        {
+          "text": "Does NOT force-pick the 'least bad' of the five \u2014 if none clear the gates, says none qualify.",
+          "passed": true,
+          "evidence": "Bottom line 'No buy'; but it still dangled TataMotors as a buy-the-dip with entry \u20b9355/stop \u20b9338/target \u20b9373 \u2014 a mixed signal vs a clean zero."
+        },
+        {
+          "text": "Any named pick includes a full trade plan (entry, stop-loss, ~5% target, risk:reward).",
+          "passed": true,
+          "evidence": "TataMotors conditional plan: entry \u20b9355, stop \u20b9338, target \u20b9373 (+5%), R:R ~1:1 (flagged mediocre)."
+        }
+      ]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "weak-regime",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 269.8,
+        "tokens": 49029,
+        "tool_calls": 24,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Leads with an explicit Nifty market-regime assessment (vs 20/50 DMA, India VIX).",
+          "passed": true,
+          "evidence": "Opens UNFAVOURABLE: Nifty below 50-DMA, 50<200 DMA, RSI ~40, MACD negative, VIX ~17, breadth 0.2x."
+        },
+        {
+          "text": "If the regime is weak, is willing to recommend sitting out or returns few/no names under stricter criteria.",
+          "passed": true,
+          "evidence": "Verdict: 'Mostly, yes \u2014 sit on your hands this month.' Zero actionable buys."
+        },
+        {
+          "text": "Frames the elevated risk of swing longs when the broad market is weak.",
+          "passed": true,
+          "evidence": "'chasing a stock that has already spiked is how the 5% target turns into a 5% loss'; needs Nifty back above 50-DMA as green light."
+        },
+        {
+          "text": "Any named stock still gets a full trade plan with a stop-loss.",
+          "passed": true,
+          "evidence": "No buy issued; CCL given as conditional watch with trigger \u20b91,095-1,115, stop <\u20b91,070, target ~\u20b91,155, R:R ~1.8:1. Also caught stale 'below MA' data."
+        }
+      ]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "weak-regime",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 163.7,
+        "tokens": 35700,
+        "tool_calls": 17,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Leads with an explicit Nifty market-regime assessment (vs 20/50 DMA, India VIX).",
+          "passed": true,
+          "evidence": "Regime table first: Nifty ~23,123 on 23,000 support, below EMAs, weekly RSI ~39.6, VIX ~17."
+        },
+        {
+          "text": "If the regime is weak, is willing to recommend sitting out or returns few/no names under stricter criteria.",
+          "passed": true,
+          "evidence": "Applies stricter criteria (half-size, relative-strength only, 23,000 kill-switch) but leans active \u2014 gives several names rather than sitting out."
+        },
+        {
+          "text": "Frames the elevated risk of swing longs when the broad market is weak.",
+          "passed": true,
+          "evidence": "'half size with VIX rising', 'take fewer trades', index kill-switch rule."
+        },
+        {
+          "text": "Any named stock still gets a full trade plan with a stop-loss.",
+          "passed": true,
+          "evidence": "Paras (entry \u20b9850-860, stop <\u20b9840, target \u20b9994); Sun Pharma/Cipla levels. Some (HAL/BEL) lack precise stops."
+        }
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 219.45,
+        "stddev": 54.0473,
+        "min": 144.0,
+        "max": 269.8
+      },
+      "tokens": {
+        "mean": 46433.25,
+        "stddev": 6540.6419,
+        "min": 36648,
+        "max": 50085
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.8958,
+        "stddev": 0.125,
+        "min": 0.75,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 185.825,
+        "stddev": 67.9602,
+        "min": 130.9,
+        "max": 285.1
+      },
+      "tokens": {
+        "mean": 32529.25,
+        "stddev": 4759.1466,
+        "min": 26317,
+        "max": 36759
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.1",
+      "time_seconds": "+33.62",
+      "tokens": "+13904.0"
+    }
+  },
+  "notes": [
+    "On the test date (2026-06-09) the Indian market was in a confirmed downtrend (Nifty below its 50-DMA, VIX spiking on Mideast/crude shock), so the correct answer to most prompts was restraint. This compressed the with-skill vs baseline pass-rate gap: strong baselines already reached cautious conclusions.",
+    "with_skill pass rate 100% (4/4 evals) vs without_skill ~89.6%. The two baseline misses were on 'applies all four gates systematically' (eval-0, eval-2) \u2014 baselines covered momentum/trend well but treated volume and per-name sentiment unevenly.",
+    "Discipline divergence is the real signal, not raw pass-rate: on eval-0 (headline) and eval-2 (watchlist) the skill returned ZERO names while baselines surfaced a conditional pick (Paras Defence; Tata Motors buy-the-dip). The skill enforced the user's 'don't give me a name' rule more strictly.",
+    "Skill caught issues baselines could miss: a STALE 'Strong Buy' data source on TCS (eval-2) and a binary NCLT demerger-EGM event landmine on Apollo (eval-1). The sentiment gate's event-awareness is pulling weight.",
+    "Cost of rigor: with_skill averaged ~219s and ~46k tokens vs ~186s and ~33k for baseline (+33s, +13k tokens). The extra spend buys systematic four-gate coverage and event/data-quality checks.",
+    "Caveat: single run per cell, and assertions are process/discipline checks (stock picks vary daily), so pass-rate is a coarse instrument here \u2014 the qualitative outputs matter more than the numbers this iteration."
+  ]
+}

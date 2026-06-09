@@ -1,0 +1,6 @@
+{"run_id":"eval-3-without_skill","expectations":[
+{"text":"Leads with an explicit Nifty market-regime assessment (vs 20/50 DMA, India VIX).","passed":true,"evidence":"Regime table first: Nifty ~23,123 on 23,000 support, below EMAs, weekly RSI ~39.6, VIX ~17."},
+{"text":"If the regime is weak, is willing to recommend sitting out or returns few/no names under stricter criteria.","passed":true,"evidence":"Applies stricter criteria (half-size, relative-strength only, 23,000 kill-switch) but leans active — gives several names rather than sitting out."},
+{"text":"Frames the elevated risk of swing longs when the broad market is weak.","passed":true,"evidence":"'half size with VIX rising', 'take fewer trades', index kill-switch rule."},
+{"text":"Any named stock still gets a full trade plan with a stop-loss.","passed":true,"evidence":"Paras (entry ₹850-860, stop <₹840, target ₹994); Sun Pharma/Cipla levels. Some (HAL/BEL) lack precise stops."}
+]}

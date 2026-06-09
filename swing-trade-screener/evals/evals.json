@@ -1,0 +1,56 @@
+{
+  "skill_name": "swing-trade-screener",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Find me some swing trades for this month. I want stocks with strong positive sentiment, good price momentum and rising volumes. Targeting about 5% per trade. If nothing's worth it, don't give me a name.",
+      "expected_output": "Runs the funnel: market regime check, technical pre-screen of Nifty 500, deep analysis across the four gates, and returns either full trade plans (entry/stop/~5% target/R:R/risk) for qualifiers OR a disciplined 'nothing qualifies' message naming the near-misses and the gate they failed. No fabricated numbers; data freshness + not-advice caveats present.",
+      "files": [],
+      "assertions": [
+        "Performs a market-regime check on the Nifty index before screening (mentions Nifty trend vs moving averages, or India VIX).",
+        "Applies all four gates: price momentum, rising volume, positive sentiment, and trade-viability/risk-reward.",
+        "For any named stock, provides a full trade plan: entry zone, stop-loss, ~5% target, and risk:reward.",
+        "If no stock qualifies, returns NO stock names and explains why — does not force a pick.",
+        "Includes a not-financial-advice and/or data-freshness caveat.",
+        "Does not present fabricated exact indicator values as fact; sources from web or marks unavailable."
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Scan the Nifty 50 and tell me which stocks are breaking out with strong volume right now. Give me a proper trade plan with stop loss and target for any that look good.",
+      "expected_output": "Honors the Nifty 50 universe (not 500). Pre-screens for breakout + volume, applies all four gates, and produces full trade plans (entry zone, stop-loss with % risk, ~5% target, risk:reward, horizon, invalidation) only for names clearing every gate. Includes regime line and position-sizing reminder.",
+      "files": [],
+      "assertions": [
+        "Restricts the screen to the Nifty 50 universe as requested (not Nifty 500 or arbitrary stocks).",
+        "Screens specifically for breakout AND above-average volume.",
+        "Provides a full trade plan with stop-loss and ~5% target for any qualifying stock.",
+        "Includes market-regime context and a position-sizing reminder.",
+        "Returns no names if none qualify rather than forcing breakouts."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here's my watchlist: RELIANCE, TCS, HDFCBANK, ITC, TATAMOTORS. Which of these has the best swing setup right now for a 5% trade? Be strict.",
+      "expected_output": "Treats the five tickers as the universe (skips the index pre-screen), runs each through the four gates, and either names the best qualifier(s) with a full trade plan or returns none if none clear the gates. Should NOT force-pick the 'least bad' of the five just because a watchlist was given — discipline holds.",
+      "files": [],
+      "assertions": [
+        "Evaluates only the five watchlist tickers as the universe; does not pull in other stocks.",
+        "Runs each ticker through the four gates (momentum, volume, sentiment, trade-viability).",
+        "Does NOT force-pick the 'least bad' of the five — if none clear the gates, says none qualify.",
+        "Any named pick includes a full trade plan (entry, stop-loss, ~5% target, risk:reward)."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Markets have been pretty shaky lately and Nifty looks weak. Are there still any swing trades worth taking right now, or should I just sit on my hands this month? Looking for that 5% kind of move.",
+      "expected_output": "Leads with an explicit market-regime check on Nifty (vs 20/50 DMA, VIX). If the regime is genuinely weak, raises the bar and is willing to recommend sitting out / returning no names. If a few relative-strength leaders still qualify under stricter gates, names them with trade plans but frames the elevated risk. Tests that the regime gate (Step 0) actually drives behavior rather than being decorative.",
+      "files": [],
+      "assertions": [
+        "Leads with an explicit Nifty market-regime assessment (vs 20/50 DMA, India VIX).",
+        "If the regime is weak, is willing to recommend sitting out or returns few/no names under stricter criteria.",
+        "Frames the elevated risk of swing longs when the broad market is weak.",
+        "Any named stock still gets a full trade plan with a stop-loss."
+      ]
+    }
+  ]
+}

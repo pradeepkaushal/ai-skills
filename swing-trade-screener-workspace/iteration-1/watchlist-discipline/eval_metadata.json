@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "watchlist-discipline",
+  "prompt": "Here's my watchlist: RELIANCE, TCS, HDFCBANK, ITC, TATAMOTORS. Which of these has the best swing setup right now for a 5% trade? Be strict.",
+  "assertions": [
+    {"text": "Evaluates only the five watchlist tickers as the universe; does not pull in other stocks."},
+    {"text": "Runs each ticker through the four gates (momentum, volume, sentiment, trade-viability)."},
+    {"text": "Does NOT force-pick the 'least bad' of the five — if none clear the gates, says none qualify."},
+    {"text": "Any named pick includes a full trade plan (entry, stop-loss, ~5% target, risk:reward)."}
+  ]
+}

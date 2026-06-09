@@ -1,0 +1,120 @@
+Split: 12 train, 8 test (holdout=0.4)
+
+============================================================
+Iteration 1/5
+Description: Screen the Indian stock market (NSE/BSE) for swing-trade setups that combine strong positive sentiment, price momentum, and rising volume, and return a full trade plan (entry, stop-loss, ~5% target, position sizing) only for stocks that clear every technical gate. Built for a trader targeting ~5% per trade per month who wants disciplined, capital-protecting selection — if nothing qualifies, it returns NO stock names and explains why. Use this skill whenever the user asks to find swing trades, momentum stocks, breakout candidates, stocks with bullish sentiment, "what should I buy this month", high-volume movers, or any technical/sentiment-driven stock screen on Indian markets. Triggers on phrases like "find me swing trades", "screen for momentum stocks", "which stocks have strong sentiment and volume", "give me a trade idea for 5% this month", "scan Nifty for breakouts", "swing picks", even if the user never says the word "skill". Indian (NSE/BSE) markets, web-sourced data.
+============================================================
+Train: 18/36 correct, precision=100% recall=0% accuracy=50% (176.9s)
+  [FAIL] rate=0/3 expected=True: good swing setup in bank nifty stocks right now with a prope
+  [FAIL] rate=0/3 expected=True: any momentum stocks breaking out of consolidation with volum
+  [FAIL] rate=0/3 expected=True: what should I buy this month for a quick trade? momentum nam
+  [FAIL] rate=0/3 expected=True: here's my watchlist RELIANCE TCS INFY — which has the best s
+  [FAIL] rate=0/3 expected=True: find me some swing trades for this month, want stuff with mo
+  [FAIL] rate=0/3 expected=True: scan nifty 500 for breakout stocks with strong volume right 
+  [PASS] rate=0/3 expected=False: help me build a long-term portfolio of indian stocks to hold
+  [PASS] rate=0/3 expected=False: what's the latest news on the Adani group?
+  [PASS] rate=0/3 expected=False: explain what RSI and MACD actually mean, I keep seeing them 
+  [PASS] rate=0/3 expected=False: give me swing trade ideas for US S&P 500 tech names
+  [PASS] rate=0/3 expected=False: should I book profit on my existing reliance holding or keep
+  [PASS] rate=0/3 expected=False: set up a stop-loss order on my Zerodha for tata motors
+Test : 12/24 correct, precision=100% recall=0% accuracy=50% (0.0s)
+  [FAIL] rate=0/3 expected=True: high volume movers with bullish sentiment for a short term t
+  [FAIL] rate=0/3 expected=True: give me a swing pick for a 5% move, only if the setup is act
+  [FAIL] rate=0/3 expected=True: which stocks have strong positive sentiment and price moment
+  [FAIL] rate=0/3 expected=True: screen for stocks near 52 week highs with increasing deliver
+  [PASS] rate=0/3 expected=False: which mutual funds or SIPs should I put money in this month?
+  [PASS] rate=0/3 expected=False: what's the max pain for nifty this expiry, should I sell a p
+  [PASS] rate=0/3 expected=False: what's the fair value of HDFC Bank based on its P/E and earn
+  [PASS] rate=0/3 expected=False: calculate the capital gains tax on my equity trades for FY26
+
+Improving description...
+Proposed (25.6s): Find swing-trade setups in Indian stocks (NSE/BSE). Use this skill when the user wants short-term trade ideas — stocks to buy now and hold days-to-weeks for a quick gain (~5%) — based on momentum, breakouts, rising volume, or positive sentiment. It scans an index or the user's own watchlist, applies strict technical gates, and returns a concrete trade plan (entry, stop-loss, target, position size) for each qualifying name — or, when nothing qualifies, names no stocks and explains why.
+
+Trigger whenever the user asks things like: find swing trades, momentum/breakout stocks on the Nifty, which of these tickers has the best setup, what to buy this month for a quick trade, stocks moving up on volume, or a strict stop-and-target trade idea — even without the word "skill."
+
+Not for: long-term investing, US stocks, generic news, or indicator explanations.
+
+============================================================
+Iteration 2/5
+Description: Find swing-trade setups in Indian stocks (NSE/BSE). Use this skill when the user wants short-term trade ideas — stocks to buy now and hold days-to-weeks for a quick gain (~5%) — based on momentum, breakouts, rising volume, or positive sentiment. It scans an index or the user's own watchlist, applies strict technical gates, and returns a concrete trade plan (entry, stop-loss, target, position size) for each qualifying name — or, when nothing qualifies, names no stocks and explains why.
+
+Trigger whenever the user asks things like: find swing trades, momentum/breakout stocks on the Nifty, which of these tickers has the best setup, what to buy this month for a quick trade, stocks moving up on volume, or a strict stop-and-target trade idea — even without the word "skill."
+
+Not for: long-term investing, US stocks, generic news, or indicator explanations.
+============================================================
+Train: 18/36 correct, precision=100% recall=0% accuracy=50% (187.6s)
+  [FAIL] rate=0/3 expected=True: what should I buy this month for a quick trade? momentum nam
+  [FAIL] rate=0/3 expected=True: any momentum stocks breaking out of consolidation with volum
+  [FAIL] rate=0/3 expected=True: here's my watchlist RELIANCE TCS INFY — which has the best s
+  [FAIL] rate=0/3 expected=True: good swing setup in bank nifty stocks right now with a prope
+  [FAIL] rate=0/3 expected=True: find me some swing trades for this month, want stuff with mo
+  [FAIL] rate=0/3 expected=True: scan nifty 500 for breakout stocks with strong volume right 
+  [PASS] rate=0/3 expected=False: help me build a long-term portfolio of indian stocks to hold
+  [PASS] rate=0/3 expected=False: what's the latest news on the Adani group?
+  [PASS] rate=0/3 expected=False: give me swing trade ideas for US S&P 500 tech names
+  [PASS] rate=0/3 expected=False: explain what RSI and MACD actually mean, I keep seeing them 
+  [PASS] rate=0/3 expected=False: should I book profit on my existing reliance holding or keep
+  [PASS] rate=0/3 expected=False: set up a stop-loss order on my Zerodha for tata motors
+Test : 12/24 correct, precision=100% recall=0% accuracy=50% (0.0s)
+  [FAIL] rate=0/3 expected=True: high volume movers with bullish sentiment for a short term t
+  [FAIL] rate=0/3 expected=True: give me a swing pick for a 5% move, only if the setup is act
+  [FAIL] rate=0/3 expected=True: which stocks have strong positive sentiment and price moment
+  [FAIL] rate=0/3 expected=True: screen for stocks near 52 week highs with increasing deliver
+  [PASS] rate=0/3 expected=False: which mutual funds or SIPs should I put money in this month?
+  [PASS] rate=0/3 expected=False: what's the max pain for nifty this expiry, should I sell a p
+  [PASS] rate=0/3 expected=False: what's the fair value of HDFC Bank based on its P/E and earn
+  [PASS] rate=0/3 expected=False: calculate the capital gains tax on my equity trades for FY26
+
+Improving description...
+Proposed (58.2s): Use this skill to find buy-now, hold-days-to-weeks swing trades in Indian stocks (NSE/BSE) and return a concrete plan — entry, stop-loss, ~5% target, position size — for each name that clears strict momentum, volume, sentiment, and risk/reward gates (or nothing, with reasons).
+
+Trigger whenever the user wants short-term Indian-stock trade ideas, regardless of wording: finding swing trades or quick-flip picks; momentum, breakout, or consolidation-breakout names; stocks moving up on rising/strong volume; scanning Nifty, Bank Nifty, Nifty 500, or any index for setups; ranking their own watchlist or tickers by best setup; "what should I buy this month" for a quick gain; or asking for a disciplined entry/stop/target trade plan. Assume relevance even if they don't say "skill," "swing," or name an index.
+
+Do NOT use for long-term investing, US/non-Indian stocks, managing or exiting existing holdings, placing broker orders, generic market news, or explaining indicators.
+
+============================================================
+Iteration 3/5
+Description: Use this skill to find buy-now, hold-days-to-weeks swing trades in Indian stocks (NSE/BSE) and return a concrete plan — entry, stop-loss, ~5% target, position size — for each name that clears strict momentum, volume, sentiment, and risk/reward gates (or nothing, with reasons).
+
+Trigger whenever the user wants short-term Indian-stock trade ideas, regardless of wording: finding swing trades or quick-flip picks; momentum, breakout, or consolidation-breakout names; stocks moving up on rising/strong volume; scanning Nifty, Bank Nifty, Nifty 500, or any index for setups; ranking their own watchlist or tickers by best setup; "what should I buy this month" for a quick gain; or asking for a disciplined entry/stop/target trade plan. Assume relevance even if they don't say "skill," "swing," or name an index.
+
+Do NOT use for long-term investing, US/non-Indian stocks, managing or exiting existing holdings, placing broker orders, generic market news, or explaining indicators.
+============================================================
+Train: 18/36 correct, precision=100% recall=0% accuracy=50% (209.5s)
+  [FAIL] rate=0/3 expected=True: what should I buy this month for a quick trade? momentum nam
+  [FAIL] rate=0/3 expected=True: any momentum stocks breaking out of consolidation with volum
+  [FAIL] rate=0/3 expected=True: good swing setup in bank nifty stocks right now with a prope
+  [FAIL] rate=0/3 expected=True: here's my watchlist RELIANCE TCS INFY — which has the best s
+  [FAIL] rate=0/3 expected=True: find me some swing trades for this month, want stuff with mo
+  [FAIL] rate=0/3 expected=True: scan nifty 500 for breakout stocks with strong volume right 
+  [PASS] rate=0/3 expected=False: help me build a long-term portfolio of indian stocks to hold
+  [PASS] rate=0/3 expected=False: what's the latest news on the Adani group?
+  [PASS] rate=0/3 expected=False: give me swing trade ideas for US S&P 500 tech names
+  [PASS] rate=0/3 expected=False: explain what RSI and MACD actually mean, I keep seeing them 
+  [PASS] rate=0/3 expected=False: should I book profit on my existing reliance holding or keep
+  [PASS] rate=0/3 expected=False: set up a stop-loss order on my Zerodha for tata motors
+Test : 12/24 correct, precision=100% recall=0% accuracy=50% (0.0s)
+  [FAIL] rate=0/3 expected=True: high volume movers with bullish sentiment for a short term t
+  [FAIL] rate=0/3 expected=True: give me a swing pick for a 5% move, only if the setup is act
+  [FAIL] rate=0/3 expected=True: which stocks have strong positive sentiment and price moment
+  [FAIL] rate=0/3 expected=True: screen for stocks near 52 week highs with increasing deliver
+  [PASS] rate=0/3 expected=False: which mutual funds or SIPs should I put money in this month?
+  [PASS] rate=0/3 expected=False: what's the max pain for nifty this expiry, should I sell a p
+  [PASS] rate=0/3 expected=False: what's the fair value of HDFC Bank based on its P/E and earn
+  [PASS] rate=0/3 expected=False: calculate the capital gains tax on my equity trades for FY26
+
+Improving description...
+Proposed (35.4s): Find short-term swing trades in Indian stocks (NSE/BSE) — stocks to buy now and hold a few days to weeks for a quick gain (~5%) — and return a concrete entry / stop-loss / target / position-size plan for each pick, or nothing with reasons.
+
+Use whenever someone wants near-term Indian-stock trade ideas: swing trades, momentum or breakout names, stocks rising on strong/expanding volume, consolidation breakouts, "what should I buy this month" for a quick gain, scanning Nifty / Bank Nifty / Nifty 500 or any index for setups, ranking their own watchlist or tickers, or wanting a disciplined stop-and-target trade plan. Match these even when the words "skill," "swing," or an index name are absent.
+
+Skip for: long-term/buy-and-hold investing, US or non-Indian stocks, managing or exiting current holdings, placing broker orders, general market news, or explaining what indicators mean.
+
+============================================================
+Iteration 4/5
+Description: Find short-term swing trades in Indian stocks (NSE/BSE) — stocks to buy now and hold a few days to weeks for a quick gain (~5%) — and return a concrete entry / stop-loss / target / position-size plan for each pick, or nothing with reasons.
+
+Use whenever someone wants near-term Indian-stock trade ideas: swing trades, momentum or breakout names, stocks rising on strong/expanding volume, consolidation breakouts, "what should I buy this month" for a quick gain, scanning Nifty / Bank Nifty / Nifty 500 or any index for setups, ranking their own watchlist or tickers, or wanting a disciplined stop-and-target trade plan. Match these even when the words "skill," "swing," or an index name are absent.
+
+Skip for: long-term/buy-and-hold investing, US or non-Indian stocks, managing or exiting current holdings, placing broker orders, general market news, or explaining what indicators mean.
+============================================================

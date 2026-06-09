@@ -1,0 +1,82 @@
+[
+  {
+    "query": "find me some swing trades for this month, want stuff with momentum and rising volume, targeting like 5%",
+    "should_trigger": true
+  },
+  {
+    "query": "scan nifty 500 for breakout stocks with strong volume right now",
+    "should_trigger": true
+  },
+  {
+    "query": "which stocks have strong positive sentiment and price momentum on NSE today?",
+    "should_trigger": true
+  },
+  {
+    "query": "give me a swing pick for a 5% move, only if the setup is actually clean",
+    "should_trigger": true
+  },
+  {
+    "query": "here's my watchlist RELIANCE TCS INFY \u2014 which has the best swing setup right now, be strict",
+    "should_trigger": true
+  },
+  {
+    "query": "what should I buy this month for a quick trade? momentum names going up on volume",
+    "should_trigger": true
+  },
+  {
+    "query": "any momentum stocks breaking out of consolidation with volume on the nifty?",
+    "should_trigger": true
+  },
+  {
+    "query": "high volume movers with bullish sentiment for a short term trade, indian market",
+    "should_trigger": true
+  },
+  {
+    "query": "screen for stocks near 52 week highs with increasing delivery volume for a swing trade",
+    "should_trigger": true
+  },
+  {
+    "query": "good swing setup in bank nifty stocks right now with a proper stop and target?",
+    "should_trigger": true
+  },
+  {
+    "query": "explain what RSI and MACD actually mean, I keep seeing them but don't get it",
+    "should_trigger": false
+  },
+  {
+    "query": "help me build a long-term portfolio of indian stocks to hold for 10 years for retirement",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the fair value of HDFC Bank based on its P/E and earnings? should I hold for the long run",
+    "should_trigger": false
+  },
+  {
+    "query": "which mutual funds or SIPs should I put money in this month?",
+    "should_trigger": false
+  },
+  {
+    "query": "calculate the capital gains tax on my equity trades for FY26",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the max pain for nifty this expiry, should I sell a put?",
+    "should_trigger": false
+  },
+  {
+    "query": "should I book profit on my existing reliance holding or keep holding?",
+    "should_trigger": false
+  },
+  {
+    "query": "give me swing trade ideas for US S&P 500 tech names",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the latest news on the Adani group?",
+    "should_trigger": false
+  },
+  {
+    "query": "set up a stop-loss order on my Zerodha for tata motors",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,8 @@
+{"run_id":"eval-0-with_skill","expectations":[
+{"text":"Performs a market-regime check on the Nifty index before screening (mentions Nifty trend vs moving averages, or India VIX).","passed":true,"evidence":"Opens with explicit regime line: Nifty 23,123 below 50-DMA and falling, 'Strong Sell' on MAs, VIX +8.2% to 17.09, FII selling — declared UNFAVORABLE."},
+{"text":"Applies all four gates: price momentum, rising volume, positive sentiment, and trade-viability/risk-reward.","passed":true,"evidence":"Each of 4 candidates rejected with the named failing gate (SOLARINDS Gate 4, INOX Gate 4, CCL Gate 4, BEL Gate 1); R:R and 52w-high room explicitly evaluated."},
+{"text":"For any named stock, provides a full trade plan: entry zone, stop-loss, ~5% target, and risk:reward.","passed":true,"evidence":"No stock qualified, so no plan was due; still supplied the position-sizing formula for when a setup appears. No violation."},
+{"text":"If no stock qualifies, returns NO stock names and explains why — does not force a pick.","passed":true,"evidence":"Qualified: 0. Names only appear as rejected 'closest misses' with gate-by-gate reasoning and a 'wait' recommendation."},
+{"text":"Includes a not-financial-advice and/or data-freshness caveat.","passed":true,"evidence":"'Data as-of EOD Jun 8 ... confirm live prices ... educational screening, not SEBI-registered investment advice.'"},
+{"text":"Does not present fabricated exact indicator values as fact; sources from web or marks unavailable.","passed":true,"evidence":"Indicator values tied to web data with an as-of note; no invented precision claimed as live."}
+]}

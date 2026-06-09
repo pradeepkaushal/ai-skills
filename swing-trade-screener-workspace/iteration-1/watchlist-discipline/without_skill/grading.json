@@ -1,0 +1,6 @@
+{"run_id":"eval-2-without_skill","expectations":[
+{"text":"Evaluates only the five watchlist tickers as the universe; does not pull in other stocks.","passed":true,"evidence":"Scorecard limited to the five names."},
+{"text":"Runs each ticker through the four gates (momentum, volume, sentiment, trade-viability).","passed":false,"evidence":"Strong on trend/RSI/MA/200-DMA and R:R, but volume and per-name sentiment gates are largely absent — not a full four-gate pass."},
+{"text":"Does NOT force-pick the 'least bad' of the five — if none clear the gates, says none qualify.","passed":true,"evidence":"Bottom line 'No buy'; but it still dangled TataMotors as a buy-the-dip with entry ₹355/stop ₹338/target ₹373 — a mixed signal vs a clean zero."},
+{"text":"Any named pick includes a full trade plan (entry, stop-loss, ~5% target, risk:reward).","passed":true,"evidence":"TataMotors conditional plan: entry ₹355, stop ₹338, target ₹373 (+5%), R:R ~1:1 (flagged mediocre)."}
+]}

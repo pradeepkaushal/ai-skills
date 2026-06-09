@@ -1,0 +1,7 @@
+{"run_id":"eval-1-with_skill","expectations":[
+{"text":"Restricts the screen to the Nifty 50 universe as requested (not Nifty 500 or arbitrary stocks).","passed":true,"evidence":"'Universe scanned: Nifty 50'; candidates all Nifty 50 (Apollo, Adani Ports, Adani Ent, Airtel, BEL, Max Health)."},
+{"text":"Screens specifically for breakout AND above-average volume.","passed":true,"evidence":"Core ask centered: rejects Apollo because the 52w-high breakout was on ~1.2x volume / distribution, not a 1.5x+ surge — volume confirmation is the explicit pivot."},
+{"text":"Provides a full trade plan with stop-loss and ~5% target for any qualifying stock.","passed":true,"evidence":"Qualified: 0, so no plan due; position-sizing reminder included. No violation."},
+{"text":"Includes market-regime context and a position-sizing reminder.","passed":true,"evidence":"Regime line (Nifty below 20/50-DMA, breadth 1:3, VIX +8.2%) plus explicit position-sizing formula."},
+{"text":"Returns no names if none qualify rather than forcing breakouts.","passed":true,"evidence":"Returned zero; named Apollo only as a rejected near-miss with a future trigger."}
+]}

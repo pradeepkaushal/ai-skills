@@ -1,0 +1,6 @@
+{"run_id":"eval-3-with_skill","expectations":[
+{"text":"Leads with an explicit Nifty market-regime assessment (vs 20/50 DMA, India VIX).","passed":true,"evidence":"Opens UNFAVOURABLE: Nifty below 50-DMA, 50<200 DMA, RSI ~40, MACD negative, VIX ~17, breadth 0.2x."},
+{"text":"If the regime is weak, is willing to recommend sitting out or returns few/no names under stricter criteria.","passed":true,"evidence":"Verdict: 'Mostly, yes — sit on your hands this month.' Zero actionable buys."},
+{"text":"Frames the elevated risk of swing longs when the broad market is weak.","passed":true,"evidence":"'chasing a stock that has already spiked is how the 5% target turns into a 5% loss'; needs Nifty back above 50-DMA as green light."},
+{"text":"Any named stock still gets a full trade plan with a stop-loss.","passed":true,"evidence":"No buy issued; CCL given as conditional watch with trigger ₹1,095-1,115, stop <₹1,070, target ~₹1,155, R:R ~1.8:1. Also caught stale 'below MA' data."}
+]}

@@ -1,0 +1,11 @@
+{
+  "eval_id": 3,
+  "eval_name": "weak-regime",
+  "prompt": "Markets have been pretty shaky lately and Nifty looks weak. Are there still any swing trades worth taking right now, or should I just sit on my hands this month? Looking for that 5% kind of move.",
+  "assertions": [
+    {"text": "Leads with an explicit Nifty market-regime assessment (vs 20/50 DMA, India VIX)."},
+    {"text": "If the regime is weak, is willing to recommend sitting out or returns few/no names under stricter criteria."},
+    {"text": "Frames the elevated risk of swing longs when the broad market is weak."},
+    {"text": "Any named stock still gets a full trade plan with a stop-loss."}
+  ]
+}

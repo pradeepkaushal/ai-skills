@@ -1,0 +1,8 @@
+{"run_id":"eval-0-without_skill","expectations":[
+{"text":"Performs a market-regime check on the Nifty index before screening (mentions Nifty trend vs moving averages, or India VIX).","passed":true,"evidence":"'Why I'm cautious' section: Nifty 23,123 (-1.04%), bearish-to-sideways, support 23,000, macro overhangs. Regime considered, though not framed against 20/50-DMA explicitly."},
+{"text":"Applies all four gates: price momentum, rising volume, positive sentiment, and trade-viability/risk-reward.","passed":false,"evidence":"Covers sentiment, momentum, volume and rejects names on over-extension, but no systematic gate framework; trade-viability/R:R applied loosely and not to every candidate."},
+{"text":"For any named stock, provides a full trade plan: entry zone, stop-loss, ~5% target, and risk:reward.","passed":true,"evidence":"Paras Defence: entry ₹940-950, target ₹990-1000 (~+5%), stop ₹915. Entry/stop/target present; explicit R:R not stated."},
+{"text":"If no stock qualifies, returns NO stock names and explains why — does not force a pick.","passed":true,"evidence":"Rejected HFCL/Lumax/Muthoot/52w-high spikers; surfaced only one conditional name on a pullback — restraint shown, not a forced basket."},
+{"text":"Includes a not-financial-advice and/or data-freshness caveat.","passed":true,"evidence":"'Research/analysis, not investment advice. Prices as of 8 June 2026 ... re-verify live levels.'"},
+{"text":"Does not present fabricated exact indicator values as fact; sources from web or marks unavailable.","passed":true,"evidence":"Prices/levels attributed to public sources with as-of date; no fabricated live indicators."}
+]}

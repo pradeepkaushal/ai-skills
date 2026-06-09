@@ -1,0 +1,6 @@
+{"run_id":"eval-2-with_skill","expectations":[
+{"text":"Evaluates only the five watchlist tickers as the universe; does not pull in other stocks.","passed":true,"evidence":"Universe = the 5 names; scorecard covers exactly RELIANCE, TCS, HDFCBANK, ITC, TATAMOTORS."},
+{"text":"Runs each ticker through the four gates (momentum, volume, sentiment, trade-viability).","passed":true,"evidence":"All five judged against the gates; each fails Gate 1 (below 50/200-DMA, downtrend), with sentiment/volume notes per name."},
+{"text":"Does NOT force-pick the 'least bad' of the five — if none clear the gates, says none qualify.","passed":true,"evidence":"Qualified: 0; explicitly refuses to name TataMotors and recommends widening the net instead."},
+{"text":"Any named pick includes a full trade plan (entry, stop-loss, ~5% target, risk:reward).","passed":true,"evidence":"No pick made, so none due. Also caught a STALE source (Investing.com 'TCS Strong Buy') and corrected it."}
+]}

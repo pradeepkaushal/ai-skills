@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "nifty50-breakout",
+  "prompt": "Scan the Nifty 50 and tell me which stocks are breaking out with strong volume right now. Give me a proper trade plan with stop loss and target for any that look good.",
+  "assertions": [
+    {"text": "Restricts the screen to the Nifty 50 universe as requested (not Nifty 500 or arbitrary stocks)."},
+    {"text": "Screens specifically for breakout AND above-average volume."},
+    {"text": "Provides a full trade plan with stop-loss and ~5% target for any qualifying stock."},
+    {"text": "Includes market-regime context and a position-sizing reminder."},
+    {"text": "Returns no names if none qualify rather than forcing breakouts."}
+  ]
+}

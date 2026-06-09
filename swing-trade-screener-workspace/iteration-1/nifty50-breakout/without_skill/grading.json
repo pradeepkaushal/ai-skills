@@ -1,0 +1,7 @@
+{"run_id":"eval-1-without_skill","expectations":[
+{"text":"Restricts the screen to the Nifty 50 universe as requested (not Nifty 500 or arbitrary stocks).","passed":true,"evidence":"Explicitly Nifty 50; notes few large-cap breakouts and excludes out-of-index names (ITDC, Adani Green, Paras)."},
+{"text":"Screens specifically for breakout AND above-average volume.","passed":true,"evidence":"'breakout without above-average volume ... guilty until proven innocent'; demands confirming volume on triggers."},
+{"text":"Provides a full trade plan with stop-loss and ~5% target for any qualifying stock.","passed":true,"evidence":"Sun Pharma (entry >₹1,815, stop ₹1,748, T1 ₹1,916) and Max Healthcare (entry ₹985-1,012, stop ₹958, T1 ₹1,055 ~+5%) with R:R."},
+{"text":"Includes market-regime context and a position-sizing reminder.","passed":true,"evidence":"Detailed regime table; 'size so a full stop-out costs ~1% of capital'."},
+{"text":"Returns no names if none qualify rather than forcing breakouts.","passed":true,"evidence":"Conditional trigger-based plans, not blind buys; explicitly pivoted away from chasing fresh-high breakouts. Discipline held."}
+]}
