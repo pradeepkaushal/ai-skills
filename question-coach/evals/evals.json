@@ -1,0 +1,32 @@
+{
+  "skill": "question-coach",
+  "description": "Triggering and behavior evals for the question-coach skill.",
+  "should_trigger": [
+    "run my question coach for this week",
+    "score this 1:1 transcript for open vs closed questions",
+    "grade my questioning in this meeting",
+    "give me some closed-to-open question drills before my 1:1",
+    "did I follow the thread in this conversation?",
+    "am I ready to advance to phase 2?",
+    "here's my 1:1 transcript — how was my questioning?",
+    "role-play a 1:1 so I can practice asking open questions",
+    "log this week's question practice and check the gate"
+  ],
+  "should_not_trigger": [
+    "give me swing trade ideas for this week",
+    "summarize today's SCMP news",
+    "write a social post for Nyra day 5",
+    "explain how this function works",
+    "review my pull request"
+  ],
+  "behavior_checks": [
+    "Quotes each manager question verbatim before classifying it",
+    "Classifies STATEMENT-AS-QUESTION against the user, not as open",
+    "Computes open ratio as OPEN / total questions",
+    "Flags a high open ratio that surfaced nothing new as a failure",
+    "Gives exactly one surgical rewrite, not a long list",
+    "Checks the Phase-1 to Phase-2 gate: open ratio >= 60% AND >= 3/4 labs surfaced something new for 2 consecutive weeks",
+    "Flags Week 5 gate misses as a method problem, not a timeline problem",
+    "Never invents transcript content; asks for a fuller dump if too thin"
+  ]
+}
